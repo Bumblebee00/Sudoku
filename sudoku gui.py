@@ -1,4 +1,4 @@
-import tkinter as tk#gbyivkfuy
+import tkinter as tk
 from PIL import ImageTk, Image
 import sudoku as sk
 #starting variables
@@ -94,5 +94,3 @@ w = tk.Tk()
 gui = Widgets(master=w)
 
 w.mainloop()
-#dafare:
-#-convertire immagini per non usare PIL
