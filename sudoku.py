@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 class Sudoku_solver():
 
@@ -6,7 +6,7 @@ class Sudoku_solver():
 
     def __init__(self, sudoku):
         self.sudoku = sudoku#->[[], [], [], [], [], [], [], [], []]->evry small list is a row
-        self.statring_time = self.time_now()
+        statring_time = datetime.now()
 
         while self.unsolved:
             self.squares()
@@ -17,20 +17,15 @@ class Sudoku_solver():
                 for y in x:
                     if y == 0:
                         nzero +=1
-            print(nzero)
             if nzero == 0:
                 self.unsolved = False
                 self.stupid = False
-                self.t = self.time_now()-self.statring_time
+                self.t = datetime.now() - statring_time
             #if it takes too long:
-            if (self.time_now()-self.statring_time)>20:
+            if (datetime.now() - statring_time)>15:
                 self.unsolved = False
                 self.stupid = True
 
-    def time_now(self):
-        t = datetime.datetime.now().second
-        mt = datetime.datetime.now().microsecond
-        return round(t + mt/1000000, 9)
     #returns values of the cell given the x, y coordinates
     def val(self, coordinates):
         x = coordinates[1]
