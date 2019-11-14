@@ -17,7 +17,7 @@ class Widgets():
         self.s_frame = tk.Frame(master=self.master, bd=0)
         self.s_frame.place(relx=0, rely=0, relwidt=0.625, relheight=1)
 
-        self.img = ImageTk.PhotoImage(Image.open('sudoku image.png'))
+        self.img = ImageTk.PhotoImage(Image.open('sudoku image.gif'))
         self.s_image = tk.Label(master=self.s_frame, image=self.img)
         self.s_image.place(relx=0, rely=0, relwidt=1, relheight=1)
 
