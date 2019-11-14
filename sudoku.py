@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class Sudoku_solver():
 
@@ -17,12 +17,13 @@ class Sudoku_solver():
                 for y in x:
                     if y == 0:
                         nzero +=1
+            print(nzero)
             if nzero == 0:
                 self.unsolved = False
                 self.stupid = False
                 self.t = datetime.now() - statring_time
             #if it takes too long:
-            if (datetime.now() - statring_time)>15:
+            if (datetime.now() - statring_time)>timedelta(seconds=15):
                 self.unsolved = False
                 self.stupid = True
 
