@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from time import time
 
 class Sudoku_solver():
 
@@ -6,7 +6,7 @@ class Sudoku_solver():
 
     def __init__(self, sudoku):
         self.sudoku = sudoku#->[[], [], [], [], [], [], [], [], []]->evry small list is a row
-        statring_time = datetime.now()
+        statring_time = time.time()
 
         while self.unsolved:
             self.squares()
@@ -21,9 +21,9 @@ class Sudoku_solver():
             if nzero == 0:
                 self.unsolved = False
                 self.stupid = False
-                self.t = datetime.now() - statring_time
+                self.t = time.time() - statring_time
             #if it takes too long:
-            if (datetime.now() - statring_time)>timedelta(seconds=15):
+            if (time.time() - statring_time)>15:
                 self.unsolved = False
                 self.stupid = True
 
